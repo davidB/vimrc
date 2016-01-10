@@ -9,8 +9,6 @@ vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
 nmap <Leader><Leader> V
 
 " require terryma/vim-expand-region
@@ -20,5 +18,41 @@ nmap <Leader><Leader> V
 "  Hit v again to expand to paragraph
 "  Hit <C-v> go back to previous selection if I went too far
 "
-" vmap v <Plug>(expand_region_expand)
-" vmap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
+" [> Airline <]
+
+" status line always opened
+set laststatus=2
+
+let g:airline#extensions#tabline#enabled = 1
+
+"  powerline font
+let g:airline_powerline_fonts=1
+
+
+" [> EditorConfig <]
+"
+" to avoid issues with fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']"
+
+
+" [> JsBeautify <]
+
+" format selection
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer>  <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+" format the whole file
+autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json nnoremap <buffer>  <c-f> :call JsonBeautify()<cr>
+autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" [> Javascript libraries syntax <]
+
+let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
