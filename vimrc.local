@@ -1,0 +1,24 @@
+" see http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+
+let mapleader = "\<Space>"
+" open/save file
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+" copy/paste...
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+nmap <Leader><Leader> V
+
+" require terryma/vim-expand-region
+"
+"  Hit v to select one character
+"  Hit vagain to expand selection to word
+"  Hit v again to expand to paragraph
+"  Hit <C-v> go back to previous selection if I went too far
+"
+" vmap v <Plug>(expand_region_expand)
+" vmap <C-v> <Plug>(expand_region_shrink)
