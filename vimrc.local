@@ -32,6 +32,16 @@ let g:airline#extensions#tabline#enabled = 1
 "  powerline font
 let g:airline_powerline_fonts=1
 
+" [> NeoComplete <]
+"
+"only on <tab>
+let g:neocomplcache_disable_auto_complete = 1
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()"{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction"}}
 
 " [> EditorConfig <]
 "
