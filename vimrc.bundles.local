@@ -4,3 +4,5 @@ Bundle 'wincent/ferret'
 Bundle 'diepm/vim-rest-console'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'terryma/vim-expand-region'
+Bundle 'editorconfig/editorconfig-vim'
+
