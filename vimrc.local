@@ -63,6 +63,11 @@ autocmd FileType json nnoremap <buffer>  <c-f> :call JsonBeautify()<cr>
 autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
 autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
 
-" [> Javascript libraries syntax <]
+" [> Javascript <]
 
 let g:used_javascript_libs = 'jquery,underscore,requirejs,chai,handlebars'
+
+" use https://github.com/feross/standard to check and to format on save
+let g:syntastic_javascript_checkers = ['standard']
+autocmd bufwritepost *.js silent !standard % --format
+"set autoread
