@@ -1,0 +1,28 @@
+= My tips and Quick Ref
+
+== Search And Replace
+
+=== In current Buffer
+
+[source,vim]
+----
+:%s/<search>/<replace>/gc
+----
+
+=== In multiples files
+
+https://github.com/wincent/ferret[wincent/ferret]
+
+Or Use plugins:
+
+* https://github.com/rking/ag.vim[rking/ag.vim]
+* https://github.com/Olical/vim-enmasse[Olical/vim-enmasse]
+
+[source,vim]
+----
+:Ag "<search>"
+:EnMasse
+:%s/<search>/<pattern>/gc
+:w
+----
+
